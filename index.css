@@ -1,0 +1,477 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap');
+
+body {
+    max-width: 100vw;
+    min-height: 90vh;
+    padding: 50px 70px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Red Hat Text", sans-serif;
+}
+
+.container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 384px;
+    gap: 20px;
+}
+.quantity-display {
+  display: none;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+}
+
+.quantity {
+  font-size: 16px;
+  margin: 0 10px;
+}
+
+.decrease, .increase {
+  background-color: #ddd;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+}
+
+
+.carts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    max-width: 300px;
+    border-radius: 12px;
+}
+
+.image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: -22px;
+    width: 100%;
+}
+
+.image-container img {
+    width: 100%; /* Rasmlar to'liq konteynerni egallaydi */
+    border-radius: 10px;
+    transition: border 0.3s ease-in-out;
+}
+
+.image-container img.border-active {
+    border: 3px solid #c73b0f; /* Aktive bo'lgan mahsulotga chegara */
+}
+
+
+.add-to-cart {
+    width: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    background-color: #fff;
+    padding: 12px;
+    height: 45px;
+    border-radius: 999px;
+    border: 1px solid #ad8a85;
+    margin-top: -22px;
+    color: #c73b0f;
+    font-size: 16px; 
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+.add {
+    width: 160px;
+}
+.increment {
+    width: 160px;
+    height: 45px;
+    padding: 12px;
+    background-color: #c73b0f;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.increment button {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 23px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid white;
+    background-color: #c73b0f;
+    color: white;
+}
+.increment .quantityof{
+    color: white;
+}
+.add-to-cart:active {
+    transform: translateY(4px);
+}
+
+.add-to-cart span {
+    font-weight: 600;
+    font-size: 18px;
+    color: #260f08;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+}
+
+.details .description {
+    font-weight: 400;
+    font-size: 14px;
+    color: #87635a;
+}
+
+.details .title {
+    font-weight: 600;
+    font-size: 16px;
+    color: #260f08;
+}
+
+.details .price {
+    font-weight: 600;
+    font-size: 16px;
+    color: #c73b0f;
+}
+
+.shopping {
+    padding: 0px 22px;
+}
+
+.title {
+    color: #c73b0f;
+    font-weight: 800;
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0.3;
+    margin-top: 50px;
+    padding-left: 50px;
+}
+
+.card-container {
+    padding: 16px;
+    border-radius: 8px;
+    background-color: #fff;
+    max-width: 400px;
+    margin: 8px auto;
+    border-bottom-left-radius: 0%;
+    border-bottom-right-radius: 0%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 12px;
+}
+
+.text-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.item-title {
+    font-weight: 600;
+    font-size: 14px;
+    color: #260f08;
+}
+
+.item-details {
+    display: flex;
+    gap: 12px;
+}
+
+.quantity {
+    font-weight: 600;
+    font-size: 14px;
+    color: #c73b0f;
+}
+
+.unit-price, .total-price {
+    font-size: 14px;
+    color: #87635a;
+}
+
+.total-price {
+    font-weight: 600;
+}
+
+.icon-group {
+    width: 27px;
+    height: 27px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #c3b6b6;
+    color: #cbcbcb;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.icon-group svg {
+    width: 65%;
+    height: 65%;
+}
+
+.order-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.order-total .label {
+    font-weight: normal;
+    font-size: 14px;
+    color: #260f08;
+}
+
+.order-total .amount {
+    font-weight: bold;
+    font-size: 24px;
+    color: #260f08;
+}
+
+.desc {
+    background-color: #fcf8f6;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    font-size: 16px;
+    align-items: center;
+    word-spacing: 2px;
+    gap: 5px;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+.confirm-order {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    background-color: #c73b0f;
+    padding: 16px 24px;
+    border-radius: 999px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: transform 0.2s ease;
+}
+
+.confirm-order:active {
+    transform: translateY(2px);
+}
+
+.confirm-order .confirm-text {
+    font-weight: 600;
+    font-size: 16px;
+    color: white;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 1100px) {
+    .container {
+        grid-template-columns: auto;
+    }
+}
+@media (max-width: 800px) {
+    .carts {
+        grid-template-columns: auto auto;
+    }
+}
+@media (max-width: 614px) {
+    .carts {
+        grid-template-columns: auto ;
+    }
+}
+
+
+
+/* General styles */
+.order-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 500px;
+  }
+  
+  .order-header {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+  }
+  
+  .order-icons {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .order-icon {
+    width: 21px;
+    height: 15px;
+    color: #1ea575;
+  }
+  
+  .order-icon-large {
+    width: 42px;
+    height: 42px;
+    color: #1ea575;
+  }
+  
+  .order-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .order-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #260f08;
+  }
+  
+  .order-subtitle {
+    font-size: 1rem;
+    color: #87635a;
+  }
+  
+  .order-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background-color: #fcf8f6;
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+  
+  .order-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .item-info {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+  
+  .item-image {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .item-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .item-name {
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: #260f08;
+  }
+  
+  .item-quantity-price {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .item-quantity {
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: #c73b0f;
+  }
+  
+  .item-price {
+    font-size: 0.875rem;
+    color: #87635a;
+  }
+  
+  .item-total {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #260f08;
+  }
+  
+  .item-divider {
+    background-color: #f5eeec;
+    height: 1px;
+    width: 100%;
+  }
+  
+  .order-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .order-total-label {
+    font-size: 0.875rem;
+    color: #260f08;
+  }
+  
+  .order-total-price {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #260f08;
+  }
+  
+  .start-new-order-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #c73b0f;
+    padding: 0.75rem 1.5rem;
+    border-radius: 999px;
+  }
+  
+  .start-order-text {
+    font-weight: 600;
+    font-size: 1rem;
+    color: white;
+  }
+  

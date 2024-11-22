@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping</title>
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css"
+        integrity="sha512-9xKTRVabjVeZmc+GUW8GgSmcREDunMM+Dt/GrzchfN8tkwHizc5RP4Ok/MXFFy5rIjJjzhndFScTceq5e6GvVQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+            <h1>Deserts</h1>
+            <br>
+            <div class="carts" id="product-list">
+                <!-- Product cards will be inserted dynamically here -->
+            </div>
+        </div>
+
+        <div class="shopping">
+            <h1 class="title">Your Cart</h1>
+            <div class="flex" id="empty-cart-message">
+                <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" fill="none" viewBox="0 0 128 128">
+                    <path fill="#260F08" d="M8.436 110.406c0 1.061 4.636 2.079 12.887 2.829 8.252.75 19.444 1.171 31.113 1.171 11.67 0 22.861-.421 31.113-1.171 8.251-.75 12.887-1.768 12.887-2.829 0-1.061-4.636-2.078-12.887-2.828-8.252-.75-19.443-1.172-31.113-1.172-11.67 0-22.861.422-31.113 1.172-8.251.75-12.887 1.767-12.887 2.828Z" opacity=".15" />
+                    <path fill="#87635A" d="m119.983 24.22-47.147 5.76 4.32 35.36 44.773-5.467a2.377 2.377 0 0 0 2.017-1.734c.083-.304.104-.62.063-.933l-4.026-32.986Z" />
+                    <path fill="#AD8A85" d="m74.561 44.142 47.147-5.754 1.435 11.778-47.142 5.758-1.44-11.782Z" />
+                    <path fill="#CAAFA7" d="M85.636 36.78a2.4 2.4 0 0 0-2.667-2.054 2.375 2.375 0 0 0-2.053 2.667l.293 2.347a3.574 3.574 0 0 1-7.066.88l-1.307-10.667 14.48-16.88c19.253-.693 34.133 3.6 35.013 10.8l1.28 10.533a1.172 1.172 0 0 1-1.333 1.307 4.696 4.696 0 0 1-3.787-4.08 2.378 2.378 0 1 0-4.72.587l.294 2.346a2.389 2.389 0 0 1-.484 1.755 2.387 2.387 0 0 1-1.583.899 2.383 2.383 0 0 1-1.755-.484 2.378 2.378 0 0 1-.898-1.583 2.371 2.371 0 0 0-1.716-2.008 2.374 2.374 0 0 0-2.511.817 2.374 2.374 0 0 0-.493 1.751l.293 2.373a4.753 4.753 0 0 1-7.652 4.317 4.755 4.755 0 0 1-1.788-3.17l-.427-3.547a2.346 2.346 0 0 0-2.666-2.053 2.4 2.4 0 0 0-2.08 2.667l.16 1.173a2.378 2.378 0 1 1-4.72.587l-.107-1.28Z" />
+                    <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width=".974" d="m81.076 28.966 34.187-4.16" />
+                </svg>
+                <p>Your added items will appear here</p>
+            </div>
+
+            <div class="your">
+                <div class="card-container" id="cart-items-container">
+                    <!-- Items will be dynamically added here -->
+                </div>
+
+                <div class="order-total">
+                    <span class="label">Order Total</span>
+                    <span class="amount" id="order-total">$0.00</span>
+                </div>
+
+                <div class="desc">
+                    🌴 This is a <b>carbon-neutral</b> delivery
+                </div>
+
+                <div class="confirm-order">
+                    <span class="confirm-text">Confirm Order</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="order-container">
+        <div class="order-header">
+          <div class="order-icons">
+            <svg class="order-icon"></svg>
+            <svg class="order-icon-large"></svg>
+          </div>
+          <div class="order-details">
+            <span class="order-title">Order Confirmed</span>
+            <span class="order-subtitle">We hope you enjoy your food!</span>
+          </div>
+        </div>
+      
+        <div class="order-items">
+          <div class="order-item">
+            <div class="item-info">
+              <img class="item-image" src="your-image-url.jpg" alt="Tiramisu">
+              <div class="item-text">
+                <span class="item-name">Classic Tiramisu</span>
+                <div class="item-quantity-price">
+                  <span class="item-quantity">1x</span>
+                  <span class="item-price">@ $5.50</span>
+                </div>
+              </div>
+            </div>
+            <span class="item-total">$5.50</span>
+          </div>
+      
+          <hr class="item-divider">
+      
+          <div class="order-item">
+            <div class="item-info">
+              <img class="item-image" src="your-image-url.jpg" alt="Crème Brûlée">
+              <div class="item-text">
+                <span class="item-name">Vanilla Bean Crème Brûlée</span>
+                <div class="item-quantity-price">
+                  <span class="item-quantity">4x</span>
+                  <span class="item-price">@ $7.00</span>
+                </div>
+              </div>
+            </div>
+            <span class="item-total">$28.00</span>
+          </div>
+      
+          <hr class="item-divider">
+      
+          <div class="order-item">
+            <div class="item-info">
+              <img class="item-image" src="your-image-url.jpg" alt="Panna Cotta">
+              <div class="item-text">
+                <span class="item-name">Vanilla Panna Cotta</span>
+                <div class="item-quantity-price">
+                  <span class="item-quantity">2x</span>
+                  <span class="item-price">@ $6.50</span>
+                </div>
+              </div>
+            </div>
+            <span class="item-total">$13.00</span>
+          </div>
+      
+          <hr class="item-divider">
+          
+          <div class="order-total">
+            <span class="order-total-label">Order Total</span>
+            <span class="order-total-price">$46.50</span>
+          </div>
+        </div>
+      
+        <div class="start-new-order-btn">
+          <span class="start-order-text">Start New Order</span>
+        </div>
+      </div>
+      
+    <script src="./index.js"></script>
+</body>
+
+</html>
